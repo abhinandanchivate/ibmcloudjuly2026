@@ -1,9 +1,98 @@
-<mxfile host="app.diagrams.net">
+<mxfile host="app.diagrams.net" pages="2">
   <diagram name="Page-1" id="6xKYFvRcLa9Wt_2pEH7r">
     <mxGraphModel dx="837" dy="295" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Md3aSrBv2zH0rLXWvnIi" name="Page-2">
+    <mxGraphModel dx="1034" dy="622" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-1" parent="1" style="whiteSpace=wrap;html=1;" value="String s = &quot;advik&quot;;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;String s = &quot;advik&quot;;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="245" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="210" width="160" x="531" y="63" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-5" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-3" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="String s (ref)&amp;nbsp;" vertex="1">
+          <mxGeometry height="25" width="160" x="531" y="77" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-4" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="" vertex="1">
+          <mxGeometry height="197.5" width="259" x="831" y="59.5" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="spool" vertex="1">
+          <mxGeometry height="30" width="60" x="831" y="59.5" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="advik" vertex="1">
+          <mxGeometry height="30" width="60" x="891" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-11" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-9" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1.&amp;nbsp; Event system.&amp;nbsp;&amp;nbsp;&lt;div&gt;a. add&amp;nbsp;&lt;/div&gt;&lt;div&gt;b. delete&lt;/div&gt;&lt;div&gt;c. update&lt;/div&gt;&lt;div&gt;d. retrieve sp event details&lt;/div&gt;&lt;div&gt;e. retrieve all event details&lt;/div&gt;&lt;div&gt;f. date wise / range based details&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="189" width="226" x="463" y="319" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-10" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="props :&amp;nbsp;&lt;div&gt;1. eventId&lt;/div&gt;&lt;div&gt;2. eventName&lt;/div&gt;&lt;div&gt;3. eventStartDate&lt;/div&gt;&lt;div&gt;4. eventEndDate&lt;/div&gt;&lt;div&gt;5. eventLocation&lt;/div&gt;&lt;div&gt;6. eventTime&lt;/div&gt;&lt;div&gt;7. eventType&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="132.5" width="160" x="862" y="383.5" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-14" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-12" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="main / controller" vertex="1">
+          <mxGeometry height="44" width="261" x="705" y="571" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-16" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-13" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-13" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="service" vertex="1">
+          <mxGeometry height="60" width="120" x="775.5" y="657" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-18" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-15" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-17" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-15" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="repo" vertex="1">
+          <mxGeometry height="60" width="120" x="775.5" y="757" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-17" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="DB" vertex="1">
+          <mxGeometry height="60" width="120" x="778" y="857" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="dto" vertex="1">
+          <mxGeometry height="30" width="60" x="886" y="722" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="utils&lt;div&gt;encryp, decryption, common conversions etc.&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="510" y="769" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="models" vertex="1">
+          <mxGeometry height="30" width="64" x="855" y="822" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-24" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-22" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-23" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Object : via new keyword" vertex="1">
+          <mxGeometry height="80" width="160" x="677" y="966" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-26" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-23" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-25" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-23" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="call constructor&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="697" y="1176" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-28" edge="1" parent="1" source="D8SSA3dTqYD6gQuYT2ry-25" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=12;startSize=8;endSize=8;" target="D8SSA3dTqYD6gQuYT2ry-27" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-25" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="after calling constructor , if u want to modify any value/ field ----&amp;gt; work with setter methods" vertex="1">
+          <mxGeometry height="60" width="252" x="636" y="1336" as="geometry" />
+        </mxCell>
+        <mxCell id="D8SSA3dTqYD6gQuYT2ry-27" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="3 : implicit default : is generated by JVM / java&lt;div&gt;explicit default : if we will use it then it will not generate the implict one.&amp;nbsp; Developer will take care about hte complete code / initialization.&lt;/div&gt;&lt;div&gt;parameterized constructor : we will pass the values to initialize the fields as per our req.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="117" width="322" x="599" y="1431" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
