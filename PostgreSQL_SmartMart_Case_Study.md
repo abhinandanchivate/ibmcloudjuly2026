@@ -1892,3 +1892,267 @@ Each participant should submit:
 | Final reporting challenge | 5% |
 
 **Total: 100%**
+
+
+## Complex SQL JOIN Assignment — 10 Questions
+
+Use the SmartMart database tables: `stores`, `employees`, `customers`, `categories`, `products`, `orders`, `order_items`, and `payments`. The database includes one-to-many, many-to-many, and self-referencing relationships. 
+
+### 1. Complete Order Transaction Report
+
+Display complete information for every order using the following tables:
+
+* `orders`
+* `customers`
+* `employees`
+* `stores`
+* `order_items`
+* `products`
+* `categories`
+* `payments`
+
+Required columns:
+
+* Order ID
+* Order date
+* Customer name
+* Customer type
+* Employee name
+* Store name
+* Product name
+* Category name
+* Quantity
+* Unit price
+* Discount percentage
+* Net item amount
+* Payment method
+* Payment status
+* Order status
+
+Include orders for which payment information is unavailable.
+
+---
+
+### 2. Store-Wise Sales Performance
+
+Generate a report for every store, including stores that have not received any orders.
+
+Required columns:
+
+* Store ID
+* Store name
+* City
+* Number of employees
+* Number of distinct customers served
+* Number of completed orders
+* Total quantity sold
+* Total sales after discount
+* Total successful payment amount
+* Average completed order value
+
+Display the stores in descending order of total sales.
+
+---
+
+### 3. Customer Purchase Summary
+
+Display all customers, including customers who have never placed an order.
+
+Required columns:
+
+* Customer ID
+* Customer name
+* Customer type
+* Customer city
+* Total number of orders
+* Number of completed orders
+* Number of cancelled orders
+* Number of distinct products purchased
+* Total quantity purchased
+* Total amount spent
+* Last order date
+* Last payment date
+
+Customers without orders should display zero totals.
+
+---
+
+### 4. Employee and Manager Sales Performance
+
+Using a self join and multiple additional joins, generate an employee performance report.
+
+Required columns:
+
+* Employee ID
+* Employee name
+* Designation
+* Store name
+* Manager name
+* Number of orders processed
+* Number of completed orders processed
+* Total products sold
+* Total sales processed
+* Average order value
+* Total successful payment amount
+
+Include employees who have not processed any orders and employees who do not have managers.
+
+---
+
+### 5. Product and Category Performance
+
+Display all products, including products that have never been ordered.
+
+Required columns:
+
+* Product ID
+* Product name
+* Category name
+* Product price
+* Current stock
+* Number of distinct orders
+* Total quantity sold
+* Total gross revenue
+* Total discount amount
+* Total net revenue
+* Number of stores where the product was sold
+* Last sold date
+
+Display unsold products at the bottom of the report.
+
+---
+
+### 6. Payment Reconciliation Report
+
+Prepare an order-level payment reconciliation report by joining customers, orders, order items and payments.
+
+Required columns:
+
+* Order ID
+* Customer name
+* Order status
+* Calculated order amount after discount
+* Total payment amount
+* Successful payment amount
+* Refunded payment amount
+* Pending amount
+* Payment status
+
+Classify every order as:
+
+* Fully Paid
+* Partially Paid
+* Overpaid
+* Refunded
+* Payment Missing
+
+Include orders that do not have any payment record.
+
+---
+
+### 7. Cross-City Order Analysis
+
+Identify orders where the following locations are different:
+
+* Customer city
+* Store city
+* Shipping city
+
+Required columns:
+
+* Order ID
+* Customer name
+* Customer city
+* Store name
+* Store city
+* Shipping city
+* Employee name
+* Order status
+* Total order amount
+* Payment status
+
+Add a derived result showing whether the order is:
+
+* Local Order
+* Cross-City Order
+* Cross-State Order
+
+Use the store’s state while determining cross-state orders.
+
+---
+
+### 8. Manager-Level Team Performance
+
+Generate a report for every manager showing the performance of employees reporting directly to them.
+
+Required columns:
+
+* Manager ID
+* Manager name
+* Manager’s store
+* Number of direct-report employees
+* Number of team members who processed orders
+* Total team orders
+* Completed team orders
+* Total team sales
+* Average sales per team member
+* Highest-performing employee
+* Highest employee sales amount
+
+Include managers whose team members have not processed any orders.
+
+---
+
+### 9. Category, Store and Customer-Type Sales Matrix
+
+Create a summarized sales report grouped by:
+
+* Store
+* Product category
+* Customer type
+
+Required columns:
+
+* Store name
+* Store city
+* Category name
+* Customer type
+* Number of distinct customers
+* Number of distinct orders
+* Number of distinct products sold
+* Total quantity sold
+* Gross sales
+* Total discount
+* Net sales
+* Successful payment amount
+
+Display only combinations having at least two distinct orders or net sales above ₹50,000.
+
+---
+
+### 10. Monthly Business Management Report
+
+Generate a month-wise business report using all major transactional tables.
+
+Required columns:
+
+* Order month
+* Store name
+* Number of employees who processed orders
+* Number of distinct customers
+* New customers registered during that month
+* Number of orders
+* Completed orders
+* Cancelled orders
+* Distinct products sold
+* Total quantity sold
+* Gross sales
+* Discount amount
+* Net sales
+* Successful payment amount
+* Refunded amount
+* Pending payment amount
+* Previous month’s net sales
+* Month-on-month sales growth percentage
+
+
