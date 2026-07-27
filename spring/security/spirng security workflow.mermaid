@@ -1,0 +1,101 @@
+flowchart TD
+
+    A["Client<br/>Browser / Postman / Frontend"] --> B["HTTP Request"]
+
+    B --> C["Servlet Container<br/>Tomcat 11 / Jetty 12"]
+
+    C --> D["DelegatingFilterProxy"]
+
+    D --> E["FilterChainProxy<br/>Main Spring Security Filter"]
+
+    E --> F{"Find first matching<br/>SecurityFilterChain"}
+
+    F --> G["SecurityContextHolderFilter<br/>Load existing SecurityContext"]
+
+    G --> H["Security Protection Filters"]
+
+    H --> H1["CORS Filter"]
+    H1 --> H2["CSRF Filter"]
+    H2 --> H3["Security Headers"]
+
+    H3 --> I{"Authentication mechanism"}
+
+    I -->|JWT Token| J1["BearerTokenAuthenticationFilter"]
+    I -->|Form Login| J2["UsernamePasswordAuthenticationFilter"]
+    I -->|HTTP Basic| J3["BasicAuthenticationFilter"]
+    I -->|No Credentials| J4["AnonymousAuthenticationFilter"]
+
+    J1 --> K["AuthenticationManager<br/>ProviderManager"]
+    J2 --> K
+    J3 --> K
+
+    K --> L{"Matching<br/>AuthenticationProvider"}
+
+    L -->|Username and Password| M1["DaoAuthenticationProvider"]
+    L -->|JWT| M2["JwtAuthenticationProvider"]
+    L -->|OAuth2| M3["OAuth2 AuthenticationProvider"]
+    L -->|Custom| M4["Custom AuthenticationProvider"]
+
+    M1 --> N1["UserDetailsService<br/>loadUserByUsername"]
+    N1 --> N2["Database / LDAP / External Store"]
+    N2 --> N3["PasswordEncoder.matches"]
+
+    M2 --> O1["JwtDecoder"]
+    O1 --> O2["Validate Signature"]
+    O2 --> O3["Validate Expiry, Issuer and Claims"]
+
+    M3 --> P1["OAuth2 / OpenID Connect Provider"]
+
+    M4 --> P2["Custom Authentication Logic"]
+
+    N3 --> Q{"Authentication successful?"}
+    O3 --> Q
+    P1 --> Q
+    P2 --> Q
+
+    Q -->|No| R["Authentication Failure Handler"]
+    R --> R1["AuthenticationEntryPoint"]
+    R1 --> R2["401 Unauthorized<br/>or Login Redirect"]
+    R2 --> Z["Response to Client"]
+
+    Q -->|Yes| S["Create authenticated<br/>Authentication object"]
+
+    J4 --> T["Anonymous Authentication"]
+    S --> U["Store Authentication in<br/>SecurityContextHolder"]
+    T --> U
+
+    U --> V["ExceptionTranslationFilter"]
+
+    V --> W["AuthorizationFilter"]
+
+    W --> X{"AuthorizationManager<br/>Check roles and authorities"}
+
+    X -->|Not Authenticated| Y1["AuthenticationEntryPoint"]
+    Y1 --> Y2["401 Unauthorized"]
+    Y2 --> Z
+
+    X -->|Authenticated but denied| Y3["AccessDeniedHandler"]
+    Y3 --> Y4["403 Forbidden"]
+    Y4 --> Z
+
+    X -->|Access Granted| AA["DispatcherServlet"]
+
+    AA --> AB["REST Controller"]
+
+    AB --> AC{"Method Security enabled?"}
+
+    AC -->|No| AD["Service Layer"]
+    AC -->|Yes| AE["@PreAuthorize / @PostAuthorize<br/>AuthorizationManager"]
+
+    AE --> AF{"Method access allowed?"}
+
+    AF -->|No| Y3
+    AF -->|Yes| AD
+
+    AD --> AG["Repository / Database"]
+
+    AG --> AH["Application Response"]
+
+    AH --> AI["SecurityContext saved or cleared"]
+
+    AI --> Z
