@@ -1,0 +1,16 @@
+flowchart LR
+
+    A["Request"] --> B["SecurityFilterChain"]
+    B --> C["Load SecurityContext"]
+    C --> D["CORS / CSRF / Headers"]
+    D --> E["Authentication Filter"]
+    E --> F["AuthenticationManager"]
+    F --> G["AuthenticationProvider"]
+    G --> H["UserDetailsService / JWT Decoder"]
+    H --> I["SecurityContextHolder"]
+    I --> J["AuthorizationFilter"]
+    J --> K{"Authorized?"}
+
+    K -->|Yes| L["Controller"]
+    K -->|No and unauthenticated| M["401 Unauthorized"]
+    K -->|No and authenticated| N["403 Forbidden"]
