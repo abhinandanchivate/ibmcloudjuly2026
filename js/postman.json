@@ -1,0 +1,252 @@
+import json
+from pathlib import Path
+
+collection = {
+    "info": {
+        "_postman_id": "d84ccf08-8d91-4d50-9a66-0d270ef55218",
+        "name": "Employee CRUD - JSON Server",
+        "description": "Postman collection for Employee CRUD operations using JavaScript and JSON Server.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:3000",
+            "type": "string"
+        },
+        {
+            "key": "employeeId",
+            "value": "1",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Get All Employees",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/employees",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["employees"]
+                },
+                "description": "Returns all employees."
+            },
+            "response": []
+        },
+        {
+            "name": "Get Employee By ID",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/employees/{{employeeId}}",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["employees", "{{employeeId}}"]
+                },
+                "description": "Returns one employee using the employeeId collection variable."
+            },
+            "response": []
+        },
+        {
+            "name": "Create Employee",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test(\"Employee created successfully\", function () {",
+                            "    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+                            "});",
+                            "",
+                            "const response = pm.response.json();",
+                            "if (response.id) {",
+                            "    pm.collectionVariables.set(\"employeeId\", response.id);",
+                            "}"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": json.dumps(
+                        {
+                            "name": "Rohit Mehta",
+                            "email": "rohit.mehta@example.com",
+                            "department": "Information Technology",
+                            "designation": "JavaScript Developer",
+                            "salary": 72000,
+                            "status": "Active",
+                            "joiningDate": "2026-08-04"
+                        },
+                        indent=2
+                    ),
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/employees",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["employees"]
+                },
+                "description": "Creates a new employee and stores the returned ID in the employeeId collection variable."
+            },
+            "response": []
+        },
+        {
+            "name": "Update Employee - PUT",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": json.dumps(
+                        {
+                            "name": "Rohit Mehta",
+                            "email": "rohit.mehta@example.com",
+                            "department": "Information Technology",
+                            "designation": "Senior JavaScript Developer",
+                            "salary": 85000,
+                            "status": "Active",
+                            "joiningDate": "2026-08-04"
+                        },
+                        indent=2
+                    ),
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/employees/{{employeeId}}",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["employees", "{{employeeId}}"]
+                },
+                "description": "Completely replaces the selected employee record."
+            },
+            "response": []
+        },
+        {
+            "name": "Update Employee Status - PATCH",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json",
+                        "type": "text"
+                    },
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": json.dumps(
+                        {
+                            "status": "On Leave"
+                        },
+                        indent=2
+                    ),
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "{{baseUrl}}/employees/{{employeeId}}",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["employees", "{{employeeId}}"]
+                },
+                "description": "Updates only selected fields of an employee."
+            },
+            "response": []
+        },
+        {
+            "name": "Delete Employee",
+            "event": [
+                {
+                    "listen": "test",
+                    "script": {
+                        "exec": [
+                            "pm.test(\"Employee deleted successfully\", function () {",
+                            "    pm.expect(pm.response.code).to.be.oneOf([200, 204]);",
+                            "});"
+                        ],
+                        "type": "text/javascript",
+                        "packages": {}
+                    }
+                }
+            ],
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/employees/{{employeeId}}",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["employees", "{{employeeId}}"]
+                },
+                "description": "Deletes the selected employee."
+            },
+            "response": []
+        }
+    ]
+}
+
+path = Path("/mnt/data/employee-crud-postman.json")
+path.write_text(json.dumps(collection, indent=2), encoding="utf-8")
+
+print(f"Created: {path}")
